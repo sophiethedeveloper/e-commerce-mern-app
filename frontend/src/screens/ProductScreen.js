@@ -5,7 +5,6 @@ import {
   Col,
   Image,
   ListGroup,
-  Card,
   Button,
   ListGroupItem,
 } from "react-bootstrap";
@@ -22,7 +21,7 @@ const ProductScreen = ({ match }) => {
     };
 
     fetchProduct();
-  }, []);
+  }, [match]);
 
   return (
     <>
