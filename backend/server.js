@@ -1,9 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const products = require("./data/products");
+const connectDB = require("./config/db");
+require("colors");
 
 const app = express();
 dotenv.config();
+
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
