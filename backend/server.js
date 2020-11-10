@@ -5,9 +5,12 @@ require("colors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 const productRoutes = require("./routes/productRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 dotenv.config();
+
+app.use(express.json());
 
 connectDB();
 
@@ -18,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(notFound); //middleware
 
